@@ -40,7 +40,7 @@ Plug 'prettier/vim-prettier', {
       \ 'for': ['javascript', 'typescript', 'typescriptreact', 'javascriptreact'] }
 
 " Other plugins
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'wellle/context.vim'
