@@ -114,6 +114,5 @@ nmap ]b <Plug>(buf-surf-forward)
 nmap [b <Plug>(buf-surf-back)
 
 " Other
-nmap <leader>m :Marks<CR>
 nmap <leader>g :Commits<CR>
 nmap <leader>c :BCommits<CR>
