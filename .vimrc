@@ -53,6 +53,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 Plug 'AndrewRadev/tagalong.vim'
+Plug 'MattesGroeger/vim-bookmarks'
 
 " airline
 let g:airline_powerline_fonts = 1
