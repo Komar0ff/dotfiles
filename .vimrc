@@ -44,7 +44,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'wellle/context.vim'
-Plug 'joeytwiddle/sexy_scroller.vim'
 Plug 'tpope/vim-commentary'
 Plug '907th/vim-auto-save'
 Plug 'ton/vim-bufsurf'
