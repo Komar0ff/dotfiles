@@ -55,6 +55,7 @@ Plug 'AndrewRadev/tagalong.vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'simeji/winresizer'
 Plug 'justinmk/vim-gtfo'
+Plug 'rhysd/git-messenger.vim'
 
 " airline
 let g:airline_powerline_fonts = 1
@@ -118,5 +119,6 @@ nmap ]b <Plug>(buf-surf-forward)
 nmap [b <Plug>(buf-surf-back)
 
 " Other
-nmap <leader>g :Commits<CR> " check global commits
+nmap <leader>gc :Commits<CR> " check global commits
 nmap <leader>c :BCommits<CR> " check commits on local file
+nmap <leader>gb :Git blame<CR> 
