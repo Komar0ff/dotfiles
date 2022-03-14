@@ -54,6 +54,7 @@ Plug 'unblevable/quick-scope'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'simeji/winresizer'
+Plug 'justinmk/vim-gtfo'
 
 " airline
 let g:airline_powerline_fonts = 1
@@ -73,11 +74,14 @@ set termguicolors
 " General
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+nmap <silent><leader>q :q <CR>
+
 nnoremap [<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 nnoremap <leader>, :noh<cr>
 noremap <leader>y "*y <CR>
-nmap <silent><leader>q :q <CR>
 map <Leader> <Plug>(easymotion-prefix)
+
+let g:winresizer_start_key = '<leader>x'
 
 " Netrw
 let g:netrw_banner = 0
@@ -116,4 +120,3 @@ nmap [b <Plug>(buf-surf-back)
 " Other
 nmap <leader>g :Commits<CR> " check global commits
 nmap <leader>c :BCommits<CR> " check commits on local file
-nmap <leader>x :WinResizerStartResize<CR> " Resize focus window
