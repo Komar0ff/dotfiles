@@ -1,3 +1,4 @@
+![bruh](https://github.com/Komar0ff/dotfiles/blob/master/img.png)
 For devicons to work properly, you need to put Nerd fonts font. 
 https://www.nerdfonts.com/font-downloads
 
