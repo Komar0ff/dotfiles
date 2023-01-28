@@ -4,7 +4,7 @@ cnoremap <C-n> <Down>
 nmap <silent><leader>q :q <CR>
 
 nnoremap [<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
-nnoremap <leader>, :noh<cr>
+nmap , :noh<cr>
 noremap <leader>y "*y <CR>
 " map <Leader> <Plug>(easymotion-prefix)
 

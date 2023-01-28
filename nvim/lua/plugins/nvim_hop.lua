@@ -8,13 +8,13 @@ hop.setup {
 
 local directions = require"hop.hint".HintDirection
 
-keymap.set("n", "b", "", {
+keymap.set("n", "<leader>b", "", {
   callback = function()
     hop.hint_words({ direction = directions.BEFORE_CURSOR })
   end,
 })
 
-keymap.set("n", "w", "", {
+keymap.set("n", "<leader>w", "", {
   callback = function()
     hop.hint_words({ direction = directions.AFTER_CURSOR })
   end,

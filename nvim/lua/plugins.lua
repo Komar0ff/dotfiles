@@ -10,57 +10,48 @@ return {
       dependencies = { {'nvim-tree/nvim-web-devicons'}}
     }, 
 
-    ---- { "github/copilot.vim", lazy = false },
+    -- { "github/copilot.vim", lazy = false },
 
     ------This tiny plugin adds vscode-like pictograms
-    -- { "onsails/lspkind-nvim", event = "VimEnter" },
+    { "onsails/lspkind-nvim", event = "VimEnter" },
 
     ---- auto-completion engine
-    -- { "hrsh7th/nvim-cmp", after = "lspkind-nvim" },
+    { "hrsh7th/nvim-cmp", after = "lspkind-nvim" },
 
     ---- nvim-cmp completion sources
-    -- { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" },
-    -- { "hrsh7th/cmp-path", after = "nvim-cmp" },
-    -- { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
-    -- { "hrsh7th/cmp-omni", after = "nvim-cmp" },
-    -- { "quangnguyen30192/cmp-nvim-ultisnips", after = { "nvim-cmp", "ultisnips" } },
+    { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" },
+    { "hrsh7th/cmp-path", after = "nvim-cmp" },
+    { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
+    { "hrsh7th/cmp-omni", after = "nvim-cmp" },
+    { "quangnguyen30192/cmp-nvim-ultisnips", after = { "nvim-cmp", "ultisnips" } },
 
     ------ nvim-lsp configuration (it relies on cmp-nvim-lsp, so it should be loaded after cmp-nvim-lsp).
-    -- { "neovim/nvim-lspconfig", after = "cmp-nvim-lsp" },
+    { "neovim/nvim-lspconfig", after = "cmp-nvim-lsp" },
 
-    -- {
-    --   "nvim-treesitter/nvim-treesitter",
-    --   event = "BufEnter",
-    --   run = ":TSUpdate",
-    -- },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      event = "BufEnter",
+      run = ":TSUpdate",
+    },
 
     ---- Super fast buffer jump
     {
       "phaazon/hop.nvim",
       branch = 'v2',
       event = "VimEnter",
-      config = function()
-        vim.defer_fn(function()
-          require("config.nvim_hop")
-        end, 2000)
-      end,
     },
 
     { "nvim-telescope/telescope.nvim", cmd = "Telescope", dependencies = { { "nvim-lua/plenary.nvim" } }},
 
-    --{
-    --  "nvim-lualine/lualine.nvim",
-    --  event = "VimEnter",
-    --  cond = firenvim_not_active,
-    --  config = [[require('config.statusline')]],
-    --}
-
-    { "akinsho/bufferline.nvim", event = "VimEnter", cond = firenvim_not_active, config = [[require('config.bufferline')]] },
+    {
+      "nvim-lualine/lualine.nvim",
+      event = "VimEnter",
+      cond = firenvim_not_active,
+    },
 
     {
       "lukas-reineke/indent-blankline.nvim",
       event = "VimEnter",
-      config = [[require('config.indent-blankline')]],
     },
 
     ---- Highlight URLs inside vim
@@ -82,21 +73,14 @@ return {
     ---- Handy unix command inside Vim (Rename, Move etc.)
     --{ "tpope/vim-eunuch", cmd = { "Rename", "Delete" } }
 
-    ---- Switch keyboard layouts
-    --{ "lyokha/vim-xkbswitch", event = { "InsertEnter" } }
-
-
     ---- Git command inside vim
-    { "tpope/vim-fugitive", event = "User InGitRepo", config = [[require('config.fugitive')]] },
+    { "tpope/vim-fugitive", event = "User InGitRepo" },
 
 
     ---- Show git change (change, delete, add) signs in vim sign column
-    { "lewis6991/gitsigns.nvim", config = [[require('config.gitsigns')]] },
+    { "lewis6991/gitsigns.nvim" },
 
 
     ---- Plugin to manipulate character pairs quickly
     { "tpope/vim-surround", event = "VimEnter" },
-
-    ---- The missing auto-completion for cmdline!
-    { "gelguy/wilder.nvim", opt = true, setup = [[vim.cmd('packadd wilder.nvim')]] },
 }
