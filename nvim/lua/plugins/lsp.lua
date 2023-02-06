@@ -1,3 +1,20 @@
+    ------This tiny plugin adds vscode-like pictograms
+    -- { "onsails/lspkind-nvim", event = "VimEnter" },
+
+    ---- auto-completion engine
+    -- { "hrsh7th/nvim-cmp", after = "lspkind-nvim" },
+
+    ---- nvim-cmp completion sources
+    -- { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" },
+    -- { "hrsh7th/cmp-path", after = "nvim-cmp" },
+    -- { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
+    -- { "hrsh7th/cmp-omni", after = "nvim-cmp" },
+    -- { "quangnguyen30192/cmp-nvim-ultisnips", after = { "nvim-cmp", "ultisnips" } },
+
+    ------ nvim-lsp configuration (it relies on cmp-nvim-lsp, so it should be loaded after cmp-nvim-lsp).
+    -- { "neovim/nvim-lspconfig", after = "cmp-nvim-lsp" },
+
+
 local fn = vim.fn
 local api = vim.api
 local keymap = vim.keymap
@@ -15,7 +32,7 @@ local custom_attach = function(client, bufnr)
     keymap.set(mode, l, r, opts)
   end
 
-  map("n", "<leader>d", vim.lsp.buf.definition, { desc = "go to definition" })
+  map("n", "gd", vim.lsp.buf.definition, { desc = "go to definition" })
   map("n", "<C-]>", vim.lsp.buf.definition)
   map("n", "K", vim.lsp.buf.hover)
   map("n", "<C-k>", vim.lsp.buf.signature_help)
@@ -33,7 +50,7 @@ local custom_attach = function(client, bufnr)
 
   -- Set some key bindings conditional on server capabilities
   if client.server_capabilities.documentFormattingProvider then
-    map("n", "<space>fo", vim.lsp.buf.format, { desc = "format code" })
+    map("n", "<space>f", vim.lsp.buf.format, { desc = "format code" })
   end
 
   api.nvim_create_autocmd("CursorHold", {
@@ -98,6 +115,66 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lspconfig = require("lspconfig")
 
+if utils.executable("pylsp") then
+  lspconfig.pylsp.setup {
+    on_attach = custom_attach,
+    settings = {
+      pylsp = {
+        plugins = {
+          pylint = { enabled = true, executable = "pylint" },
+          pyflakes = { enabled = false },
+          pycodestyle = { enabled = false },
+          jedi_completion = { fuzzy = true },
+          pyls_isort = { enabled = true },
+          pylsp_mypy = { enabled = true },
+        },
+      },
+    },
+    flags = {
+      debounce_text_changes = 200,
+    },
+    capabilities = capabilities,
+  }
+else
+  vim.notify("pylsp not found!", vim.log.levels.WARN, { title = "Nvim-config" })
+end
+
+-- if utils.executable('pyright') then
+--   lspconfig.pyright.setup{
+--     on_attach = custom_attach,
+--     capabilities = capabilities
+--   }
+-- else
+--   vim.notify("pyright not found!", vim.log.levels.WARN, {title = 'Nvim-config'})
+-- end
+
+if utils.executable("ltex-ls") then
+  lspconfig.ltex.setup {
+    on_attach = custom_attach,
+    cmd = { "ltex-ls" },
+    filetypes = { "text", "plaintex", "tex", "markdown" },
+    settings = {
+      ltex = {
+        language = "en"
+      },
+    },
+    flags = { debounce_text_changes = 300 },
+}
+end
+
+if utils.executable("clangd") then
+  lspconfig.clangd.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+    filetypes = { "c", "cpp", "cc" },
+    flags = {
+      debounce_text_changes = 500,
+    },
+  }
+else
+  vim.notify("clangd not found!", vim.log.levels.WARN, { title = "Nvim-config" })
+end
+
 -- set up vim-language-server
 if utils.executable("vim-language-server") then
   lspconfig.vimls.setup {
@@ -109,6 +186,34 @@ if utils.executable("vim-language-server") then
   }
 else
   vim.notify("vim-language-server not found!", vim.log.levels.WARN, { title = "Nvim-config" })
+end
+
+-- set up bash-language-server
+if utils.executable("bash-language-server") then
+  lspconfig.bashls.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+  }
+end
+
+if utils.executable("lua-language-server") then
+  -- settings for lua-language-server can be found on https://github.com/sumneko/lua-language-server/wiki/Settings .
+  lspconfig.sumneko_lua.setup {
+    on_attach = custom_attach,
+    settings = {
+      Lua = {
+        runtime = {
+          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+          version = "LuaJIT",
+        },
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = { "vim" },
+        },
+      },
+    },
+    capabilities = capabilities,
+  }
 end
 
 -- Change diagnostic signs.
@@ -124,6 +229,13 @@ diagnostic.config {
   signs = true,
   severity_sort = true,
 }
+
+-- lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
+--   underline = false,
+--   virtual_text = false,
+--   signs = true,
+--   update_in_insert = false,
+-- })
 
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
 lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
