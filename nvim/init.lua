@@ -1,12 +1,9 @@
-
 require "plugins"
 
 local core_files = {
   "globals.lua", -- some global settings
   "options.vim", -- setting options in nvim
-  -- "autocommands.vim", -- various autocommands
   "mappings.vim", -- all the user-defined mappings
-  -- "colorscheme.lua", -- colorscheme settings
 }
 
 -- source all the core config files

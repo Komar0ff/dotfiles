@@ -19,9 +19,4 @@ set incsearch
 set guifont="Fira Code"
 set number relativenumber
 
-" call utils#Cabbrev('pi', 'PackerInstall')
-" call utils#Cabbrev('pud', 'PackerUpdate')
-" call utils#Cabbrev('pc', 'PackerClean')
-" call utils#Cabbrev('ps', 'PackerSync')
-
 let g:auto_save = 1  " enable AutoSave on Vim startup

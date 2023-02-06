@@ -1,11 +1,3 @@
-require "utils"
-
--- Inspect something
-function _G.inspect(item)
-  vim.pretty_print(item)
-end
-
-vim.g.logging_level = "info"
 vim.g.mapleader = ' '
 
 -- Use English as main language
@@ -27,7 +19,7 @@ if not vim.loop.fs_stat(lazypath) then
 require("lazy").setup("plugins", {
   defaults = { lazy = true },
   install = { colorscheme = { "catppuccin" } },
-  checker = { enabled = true },
+  change_detection = { notify = false },
   performance = {
     rtp = {
      disabled_plugins = {
