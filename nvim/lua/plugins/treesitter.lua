@@ -1,8 +1,24 @@
-require("nvim-treesitter.configs").setup {
-  ensure_installed = { "python", "cpp", "lua", "vim", "typescript", "javascript" },
-  ignore_install = {}, -- List of parsers to ignore installing
-  highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = { 'help' }, -- list of language that will be disabled
-  },
+return {
+  "nvim-treesitter/nvim-treesitter",
+  event = "BufEnter",
+  build = ":TSUpdate",
+  opts = {
+    ensure_installed = { 
+      "typescript", 
+      "javascript",
+      "bash",
+      "html",
+      "css", 
+      "markdown",
+      "vim",
+      "yaml",
+      "tsx",
+      "json",
+      "lua",
+      "regex",
+
+    },
+    ignore_install = {}, 
+    highlight = { enable = true },
+  }
 }
