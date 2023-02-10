@@ -18,5 +18,6 @@ set noswapfile
 set incsearch
 set guifont="Fira Code"
 set number relativenumber
+set completeopt=menu,menuone,noselect
 
 let g:auto_save = 1  " enable AutoSave on Vim startup

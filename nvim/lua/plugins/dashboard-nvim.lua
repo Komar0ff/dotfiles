@@ -1,5 +1,5 @@
-return { 
-  "glepnir/dashboard-nvim", 
+return {
+  "glepnir/dashboard-nvim",
   event = "VimEnter",
   opts = {
     theme = 'doom',

@@ -1,13 +1,13 @@
 return {
-    { 
-      "catppuccin/nvim" , 
-      name = "catppuccin" , 
-      event = "VimEnter" , 
+    {
+      "catppuccin/nvim" ,
+      name = "catppuccin" ,
+      event = "VimEnter" ,
       config = function()
                 vim.cmd([[colorscheme catppuccin]])
                end,
       dependencies = { {'nvim-tree/nvim-web-devicons'}}
-    }, 
+    },
 
     -- Highlight URLs inside vim
     { "itchyny/vim-highlighturl", event = "VimEnter" },

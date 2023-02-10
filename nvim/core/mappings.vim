@@ -11,10 +11,7 @@ noremap <leader>y "*y <CR>
 let g:winresizer_start_key = '<leader>x'
 
 " Netrw
-let g:netrw_banner = 0
-let g:netrw_localrmdir="mv ~/.Trash/"
 nmap <silent><leader>e :Explore <CR>
-nmap <leader>nd :!rm -fr
 
 " Tabs
 nnoremap tn :tabnew<CR>
@@ -31,6 +28,17 @@ nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+nmap <leader>cl <cmd>LspInfo<cr>
+nmap <leader>d  <cmd>Telescope lsp_definitions<cr>
+nmap <leader>gr  <cmd>Telescope lsp_references<cr>
+
+      " { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Goto Definition" },
+      " { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+      " { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
+      " { "gI", "<cmd>Telescope lsp_implementations<cr>", desc = "Goto Implementation" },
+      " { "gt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Goto Type Definition" },
+
 
 " CocSearch
 " nmap <leader>d <Plug>(coc-definition)
