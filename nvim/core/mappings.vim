@@ -17,16 +17,17 @@ nmap <silent><leader>e :Explore <CR>
 nmap <leader>nd :!rm -fr
 
 " Tabs
-nnoremap <leader>tn :tabnew<CR>
-nnoremap <leader>tc :tabclose<CR>
-nnoremap <leader>to :tabonly<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tc :tabclose<CR>
+nnoremap to :tabonly<CR>
 
 " Split screen moves
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
 
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
