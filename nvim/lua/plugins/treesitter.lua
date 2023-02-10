@@ -16,7 +16,6 @@ return {
       "json",
       "lua",
       "regex",
-
     },
     ignore_install = {}, 
     highlight = { enable = true },

@@ -25,8 +25,7 @@ return {
     { "907th/vim-auto-save", event = "InsertEnter" },
 
     -- Git command inside vim
-    { "tpope/vim-fugitive", event = "User InGitRepo" },
-
+    { "tpope/vim-fugitive" },
 
     -- Show git change (change, delete, add) signs in vim sign column
     { "lewis6991/gitsigns.nvim" },
@@ -34,11 +33,12 @@ return {
     -- Plugin to manipulate character pairs quickly
     { "tpope/vim-surround", event = "VimEnter" },
 
-
     { "nvim-telescope/telescope.nvim", cmd = "Telescope", dependencies = { { "nvim-lua/plenary.nvim" } }},
 
+    -- improves netrw
+    { "tpope/vim-vinegar", event = 'VimEnter' },
 
-    ---- Snippet engine and snippet template
+    -- Snippet engine and snippet template
     --{ "SirVer/ultisnips", event = "InsertEnter" }
     --{ "honza/vim-snippets", dependencies = "ultisnips" }
 }
