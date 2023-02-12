@@ -38,6 +38,8 @@ return {
     -- improves netrw
     { "tpope/vim-vinegar", event = 'VimEnter' },
 
+    { "prettier/vim-prettier", event = 'VimEnter' },
+
     -- Snippet engine and snippet template
     --{ "SirVer/ultisnips", event = "InsertEnter" }
     --{ "honza/vim-snippets", dependencies = "ultisnips" }

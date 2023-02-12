@@ -25,6 +25,7 @@
   "vim-commentary": { "branch": "master", "commit": "e87cd90dc09c2a203e13af9704bd0ef79303d755" },
   "vim-fugitive": { "branch": "master", "commit": "62f42f013d866139fa23068ac2651b3f7e05a56f" },
   "vim-highlighturl": { "branch": "master", "commit": "012fee983e03913db6ba6393307eac434999b896" },
+  "vim-prettier": { "branch": "master", "commit": "5e6cca21e12587c02e32a06bf423519eb1e9f1b2" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-vinegar": { "branch": "master", "commit": "bb1bcddf43cfebe05eb565a84ab069b357d0b3d6" }
 }

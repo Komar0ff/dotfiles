@@ -3,13 +3,14 @@ return {
   event = "BufEnter",
   build = ":TSUpdate",
   opts = {
-    ensure_installed = { 
-      "typescript", 
+    ensure_installed = {
+      "typescript",
       "javascript",
       "bash",
       "html",
-      "css", 
+      "css",
       "markdown",
+      "python",
       "vim",
       "yaml",
       "tsx",
@@ -17,7 +18,7 @@ return {
       "lua",
       "regex",
     },
-    ignore_install = {}, 
+    ignore_install = {},
     highlight = { enable = true },
   }
 }
