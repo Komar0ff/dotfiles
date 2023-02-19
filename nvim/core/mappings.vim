@@ -33,11 +33,8 @@ nmap <leader>cl <cmd>LspInfo<cr>
 nmap <leader>d  <cmd>Telescope lsp_definitions<cr>
 nmap <leader>gr  <cmd>Telescope lsp_references<cr>
 
-      " { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Goto Definition" },
-      " { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
-      " { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
-      " { "gI", "<cmd>Telescope lsp_implementations<cr>", desc = "Goto Implementation" },
-      " { "gt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Goto Type Definition" },
+nmap <leader>p :PrettierAsync<cr>
+
 
 
 " CocSearch
