@@ -6,9 +6,6 @@ nmap <silent><leader>q :q <CR>
 nnoremap [<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 nmap , :noh<cr>
 noremap <leader>y "*y <CR>
-" map <Leader> <Plug>(easymotion-prefix)
-
-let g:winresizer_start_key = '<leader>x'
 
 " Netrw
 nmap <silent><leader>e :Explore <CR>
@@ -25,9 +22,9 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
 
 nnoremap <leader>f <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>lg <cmd>Telescope live_grep<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>h <cmd>Telescope help_tags<cr>
 
 nmap <leader>cl <cmd>LspInfo<cr>
 nmap <leader>d  <cmd>Telescope lsp_definitions<cr>
