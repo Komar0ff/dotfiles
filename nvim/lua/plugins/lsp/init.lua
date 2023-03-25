@@ -94,5 +94,5 @@ return {
       end
     end,
   },
-  {"mfussenegger/nvim-dap"}
+  -- {"mfussenegger/nvim-dap"}
 }

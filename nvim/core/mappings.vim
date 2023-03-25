@@ -29,6 +29,7 @@ nnoremap <leader>h <cmd>Telescope help_tags<cr>
 nmap <leader>cl <cmd>LspInfo<cr>
 nmap <leader>d  <cmd>Telescope lsp_definitions<cr>
 nmap <leader>gr  <cmd>Telescope lsp_references<cr>
+nmap <leader>gs  <cmd>Telescope git_status<cr>
 
 nmap <leader>p :PrettierAsync<cr>
 
