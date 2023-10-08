@@ -1,6 +1,6 @@
 return {
   "phaazon/hop.nvim",
-  branch = 'v2',
+  branch = "master",
   event = "VimEnter",
   config = function()
     local keymap = vim.keymap

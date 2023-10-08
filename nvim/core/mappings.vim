@@ -1,25 +1,4 @@
-" General
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-nmap <silent><leader>q :q <CR>
-
-nnoremap [<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
-nmap , :noh<cr>
-noremap <leader>y "*y <CR>
-
-" Netrw
-nmap <silent><leader>e :Explore <CR>
-
-" Tabs
-nnoremap tn :tabnew<CR>
-nnoremap tc :tabclose<CR>
-nnoremap to :tabonly<CR>
-
-" Split screen moves
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-L> <C-W><C-L>
+" lsp bindings
 
 nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>lg <cmd>Telescope live_grep<cr>
