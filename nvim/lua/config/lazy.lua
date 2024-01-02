@@ -13,19 +13,34 @@ require("lazy").setup({
     { import = "plugins" },
   },
   defaults = { lazy = true },
-  install = { colorscheme = { "catppuccin" } },
-  change_detection = { notify = false },
   performance = {
-  rtp = {
-  disabled_plugins = {
-    "gzip",
-    "matchit",
-    "matchparen",
-    "tarPlugin",
-    "tohtml",
-    "tutor",
-    "zipPlugin",
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
   },
+  ui = {
+    icons = {
+      cmd = "⌘",
+      config = "🛠",
+      event = "📅",
+      ft = "📂",
+      init = "⚙",
+      keys = "🗝",
+      plugin = "🔌",
+      runtime = "💻",
+      require = "🌙",
+      source = "📄",
+      start = "🚀",
+      task = "📌",
+      lazy = "💤 ",
+    },
   },
- },
 })

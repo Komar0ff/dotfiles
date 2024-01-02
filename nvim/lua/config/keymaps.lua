@@ -9,9 +9,6 @@ map("n", "[<space>", ":<c-u>put =repeat(nr2char(10), v:count1)<cr>", {remap = tr
 map("n", ",", "<cmd>noh<cr>")
 map("n", "<leader>y", '"*y', {silent = true})
 
--- Netrw
-map("n", "<leader>e", "<cmd>Explore<cr>", {silent = true})
-
 -- Tabs
 map("n", "tn", "<cmd>tabnew<cr>", {remap = true})
 map("n", "tc", "<cmd>tabclose<cr>", {remap = true})
@@ -27,6 +24,11 @@ map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 map("n", "[b", "<cmd>bprevious<cr>")
 map("n", "]b", "<cmd>bnext<cr>")
 
+-- telescope keys
+map("n", "<leader>f", "<cmd> Telescope find_files <cr>", {noremap = true})
+map("n", "<leader>lg", "<cmd> Telescope live_grep <cr>", {noremap = true})
+map("n", "<leader>b", "<cmd> Telescope buffers <cr>", {noremap = true})
+map("n", "<leader>h", "<cmd> Telescope help_tags <cr>", {noremap = true})
 
 -- " General
 -- cnoremap <C-p> <Up>
