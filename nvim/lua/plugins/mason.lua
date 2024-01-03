@@ -1,1 +1,1 @@
-return { "williamboman/mason.nvim", lazy = false }
+return { "williamboman/mason.nvim", event = 'VimEnter', lazy = false }

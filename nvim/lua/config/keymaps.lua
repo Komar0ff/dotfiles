@@ -29,10 +29,12 @@ map("n", "[b", "<cmd>bprevious<cr>")
 map("n", "]b", "<cmd>bnext<cr>")
 
 -- telescope keys
-map("n", "<leader>f", "<cmd> Telescope find_files <cr>", {noremap = true})
+map("n", "<leader>f",  "<cmd> Telescope find_files <cr>", {noremap = true})
 map("n", "<leader>lg", "<cmd> Telescope live_grep <cr>", {noremap = true})
-map("n", "<leader>b", "<cmd> Telescope buffers <cr>", {noremap = true})
-map("n", "<leader>h", "<cmd> Telescope help_tags <cr>", {noremap = true})
+map("n", "<leader>b",  "<cmd> Telescope buffers <cr>", {noremap = true})
+map("n", "<leader>h",  "<cmd> Telescope help_tags <cr>", {noremap = true})
+map("n", "<leader>b",  "<cmd> Telescope buffers <cr>", {noremap = true})
+map("n", "gr",         "<cmd> Telescope lsp_references <cr>") 
 
 -- hop 
 map("n", "w", ":HopWordAC <cr>") 
@@ -41,6 +43,9 @@ map("n", "b", ":HopWordBC <cr>")
 -- zen mode
 map("n", "<leader>z", ":ZenMode <cr>") 
 
+-- bookmarks
+map("n","mm","bm.bookmark_toggle")
+
 
 -- surround default keymaps
 -- ys* - add 
@@ -48,6 +53,7 @@ map("n", "<leader>z", ":ZenMode <cr>")
 -- ds* - delete 
 -- cs* - change
 
+-- bookmarks keymap check in telescope.lua file
 
 -- nmap <leader>d  <cmd>Telescope lsp_definitions<cr>
 -- nmap <leader>gr  <cmd>Telescope lsp_references<cr>
