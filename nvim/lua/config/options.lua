@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 -- window-scoped options
 local wo = vim.wo
 
-wo.wrap = false
+wo.wrap = true
 wo.number = true
 wo.relativenumber = true
 

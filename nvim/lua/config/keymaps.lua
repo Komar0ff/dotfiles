@@ -4,6 +4,8 @@ local map = vim.keymap.set
 map("n", "<C-p>", "<Up>", {remap = true})
 map("n", "<C-n>", "<Down>", {remap = true})
 map("n", "<leader>q", ":q<cr>", {silent = true})
+map("n", "j", "gj", {noremap = true}) -- for wrapped strings
+map("n", "k", "gk", {noremap = true})
 
 map("n", "[<space>", ":<c-u>put =repeat(nr2char(10), v:count1)<cr>", {remap = true})
 map("n", ",", "<cmd>noh<cr>")
@@ -19,6 +21,8 @@ map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+map("n", "<C-v>", "<C-w>v <C-l>", { desc = "Add split window vertical", remap = true })
+map("n", "<C-s>", "<C-w>s <C-j>", { desc = "Add split window horizontal", remap = true })
 
 -- buffer workflow
 map("n", "[b", "<cmd>bprevious<cr>")
@@ -30,42 +34,26 @@ map("n", "<leader>lg", "<cmd> Telescope live_grep <cr>", {noremap = true})
 map("n", "<leader>b", "<cmd> Telescope buffers <cr>", {noremap = true})
 map("n", "<leader>h", "<cmd> Telescope help_tags <cr>", {noremap = true})
 
--- " General
--- cnoremap <C-p> <Up>
--- cnoremap <C-n> <Down>
--- nmap <silent><leader>q :q <CR>
+-- hop 
+map("n", "w", ":HopWordAC <cr>") 
+map("n", "b", ":HopWordBC <cr>") 
 
--- nnoremap [<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
--- nmap , :noh<cr>
--- noremap <leader>y "*y <CR>
+-- zen mode
+map("n", "<leader>z", ":ZenMode <cr>") 
 
--- " Netrw
--- nmap <silent><leader>e :Explore <CR>
 
--- " Tabs
--- nnoremap tn :tabnew<CR>
--- nnoremap tc :tabclose<CR>
--- nnoremap to :tabonly<CR>
+-- surround default keymaps
+-- ys* - add 
+-- ySS* - add to current line
+-- ds* - delete 
+-- cs* - change
 
--- " Split screen moves
--- nnoremap <C-J> <C-W><C-J>
--- nnoremap <C-K> <C-W><C-K>
--- nnoremap <C-H> <C-W><C-H>
--- nnoremap <C-L> <C-W><C-L>
 
--- nnoremap <leader>f <cmd>Telescope find_files<cr>
--- nnoremap <leader>lg <cmd>Telescope live_grep<cr>
--- nnoremap <leader>b <cmd>Telescope buffers<cr>
--- nnoremap <leader>h <cmd>Telescope help_tags<cr>
-
--- nmap <leader>cl <cmd>LspInfo<cr>
 -- nmap <leader>d  <cmd>Telescope lsp_definitions<cr>
 -- nmap <leader>gr  <cmd>Telescope lsp_references<cr>
 -- nmap <leader>gs  <cmd>Telescope git_status<cr>
 
 -- nmap <leader>p :PrettierAsync<cr>
-
-
 
 -- " CocSearch
 -- " nmap <leader>d <Plug>(coc-definition)
@@ -79,11 +67,6 @@ map("n", "<leader>h", "<cmd> Telescope help_tags <cr>", {noremap = true})
 -- " nnoremap <leader>f :GFiles<CR>
 -- " nnoremap <leader>s :Rg -w<space>
 -- " nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
-
--- " " Buffer
--- " nmap <leader>l :Buffers<CR>
--- " nmap ]b <Plug>(buf-surf-forward)
--- " nmap [b <Plug>(buf-surf-back)
 
 -- " " Other
 -- " nmap <leader>gc :Commits<CR> " check global commits
