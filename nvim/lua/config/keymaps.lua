@@ -34,15 +34,14 @@ map("n", "<leader>f",  "<cmd> Telescope find_files <cr>", {noremap = true})
 map("n", "<leader>lg", "<cmd> Telescope live_grep <cr>", {noremap = true})
 map("n", "<leader>bs",  "<cmd> Telescope buffers <cr>", {noremap = true})
 map("n", "<leader>h",  "<cmd> Telescope help_tags <cr>", {noremap = true})
-map("n", "<leader>b",  "<cmd> Telescope buffers <cr>", {noremap = true})
-map("n", "gr",         "<cmd> Telescope lsp_references <cr>") 
+-- other lsp leymaps check in lsp/keymaps.lua
 
 -- hop 
-map("n", "w", "<cmd> HopWordAC <cr>") 
-map("n", "b", "<cmd> HopWordBC <cr>") 
+map("n", "w", "<cmd> HopWordAC <cr>")
+map("n", "b", "<cmd> HopWordBC <cr>")
 
--- zen mode
-map("n", "<leader>z", ":ZenMode <cr>") 
+-- zen mode(on/off)
+map("n", "<leader>z", ":ZenMode <cr>")
 
 -- oil
 map("n", "-", "<cmd> Oil --float <cr>", { desc = "Open parent directory" })
