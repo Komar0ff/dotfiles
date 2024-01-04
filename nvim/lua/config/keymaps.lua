@@ -3,7 +3,7 @@ local map = vim.keymap.set
 -- General
 map("n", "<C-p>", "<Up>", {remap = true})
 map("n", "<C-n>", "<Down>", {remap = true})
-map("n", "<leader>q", ":q<cr>", {silent = true})
+map("n", "q", ":q<cr>", {silent = true})
 map("n", "j", "gj", {noremap = true}) -- for wrapped strings
 map("n", "k", "gk", {noremap = true})
 
@@ -27,25 +27,25 @@ map("n", "<C-s>", "<C-w>s <C-j>", { desc = "Add split window horizontal", remap 
 -- buffer workflow
 map("n", "[b", "<cmd>bprevious<cr>")
 map("n", "]b", "<cmd>bnext<cr>")
+map("n", "<leader>bd", "<cmd>bdelete<cr>")
 
 -- telescope keys
 map("n", "<leader>f",  "<cmd> Telescope find_files <cr>", {noremap = true})
 map("n", "<leader>lg", "<cmd> Telescope live_grep <cr>", {noremap = true})
-map("n", "<leader>b",  "<cmd> Telescope buffers <cr>", {noremap = true})
+map("n", "<leader>bs",  "<cmd> Telescope buffers <cr>", {noremap = true})
 map("n", "<leader>h",  "<cmd> Telescope help_tags <cr>", {noremap = true})
 map("n", "<leader>b",  "<cmd> Telescope buffers <cr>", {noremap = true})
 map("n", "gr",         "<cmd> Telescope lsp_references <cr>") 
 
 -- hop 
-map("n", "w", ":HopWordAC <cr>") 
-map("n", "b", ":HopWordBC <cr>") 
+map("n", "w", "<cmd> HopWordAC <cr>") 
+map("n", "b", "<cmd> HopWordBC <cr>") 
 
 -- zen mode
 map("n", "<leader>z", ":ZenMode <cr>") 
 
--- bookmarks
-map("n","mm","bm.bookmark_toggle")
-
+-- oil
+map("n", "-", "<cmd> Oil --float <cr>", { desc = "Open parent directory" })
 
 -- surround default keymaps
 -- ys* - add 
