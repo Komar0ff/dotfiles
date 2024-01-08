@@ -34,6 +34,7 @@ map("n", "<leader>f",  "<cmd> Telescope find_files <cr>", {noremap = true})
 map("n", "<leader>lg", "<cmd> Telescope live_grep <cr>", {noremap = true})
 map("n", "<leader>bs",  "<cmd> Telescope buffers <cr>", {noremap = true})
 map("n", "<leader>h",  "<cmd> Telescope help_tags <cr>", {noremap = true})
+map("n", "ml",  "<cmd> Telescope bookmarks list <cr>", {noremap = true})
 -- other lsp leymaps check in lsp/keymaps.lua
 
 -- hop 
