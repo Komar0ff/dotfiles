@@ -14,8 +14,8 @@ function M.get()
     -- stylua: ignore
     M._keys =  {
       { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
-      { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "Goto Definition", has = "definition" },
-      { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+      { "<leader>d", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "Goto Definition", has = "definition" },
+      { "<leader>r", "<cmd>Telescope lsp_references<cr>", desc = "References" },
       { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "Goto T[y]pe Definition" },
       { "gh", vim.lsp.buf.hover, desc = "Hover" },
     }

@@ -4,12 +4,16 @@ local map = vim.keymap.set
 map("n", "<C-p>", "<Up>", {remap = true})
 map("n", "<C-n>", "<Down>", {remap = true})
 map("n", "q", ":q<cr>", {silent = true})
-map("n", "j", "gj", {noremap = true}) -- for wrapped strings
+map("n", "j", "gj", {noremap = true})
 map("n", "k", "gk", {noremap = true})
 
 map("n", "[<space>", ":<c-u>put =repeat(nr2char(10), v:count1)<cr>", {remap = true})
 map("n", ",", "<cmd>noh<cr>")
-map("n", "<leader>y", '"*y', {silent = true})
+
+-- clipboard
+map("n", "<leader>y", '"+y', {remap = true})
+map("v", "<leader>y", '"+y', {remap = true})
+map("n", "<leader>P", '"+p', {remap = true})
 
 -- Tabs
 map("n", "tn", "<cmd>tabnew<cr>", {remap = true})
@@ -28,13 +32,14 @@ map("n", "<C-s>", "<C-w>s <C-j>", { desc = "Add split window horizontal", remap 
 map("n", "[b", "<cmd>bprevious<cr>")
 map("n", "]b", "<cmd>bnext<cr>")
 map("n", "<leader>bd", "<cmd>bdelete<cr>")
+map("n", "[[", "<cmd> Telescope buffers <cr>", {noremap = true})
 
 -- telescope keys
 map("n", "<leader>f",  "<cmd> Telescope find_files <cr>", {noremap = true})
 map("n", "<leader>lg", "<cmd> Telescope live_grep <cr>", {noremap = true})
-map("n", "<leader>bs",  "<cmd> Telescope buffers <cr>", {noremap = true})
+map("n", "<leader>lG", "<cmd> execute 'Telescope live_grep default_text=' . expand('<cword>')<cr>", {noremap = true})
 map("n", "<leader>h",  "<cmd> Telescope help_tags <cr>", {noremap = true})
-map("n", "ml",  "<cmd> Telescope bookmarks list <cr>", {noremap = true})
+map("n", "ml",         "<cmd> Telescope bookmarks list <cr>", {noremap = true})
 -- other lsp leymaps check in lsp/keymaps.lua
 
 -- hop 
@@ -45,7 +50,10 @@ map("n", "b", "<cmd> HopWordBC <cr>")
 map("n", "<leader>z", ":ZenMode <cr>")
 
 -- oil
-map("n", "-", "<cmd> Oil --float <cr>", { desc = "Open parent directory" })
+map("n", "e", "<cmd> Oil --float <cr>", { desc = "Open parent directory" })
+
+--prettier
+map("n", "<leader>p", "<Plug>(prettier-format)")
 
 -- surround default keymaps
 -- ys* - add 
@@ -54,25 +62,7 @@ map("n", "-", "<cmd> Oil --float <cr>", { desc = "Open parent directory" })
 -- cs* - change
 
 -- bookmarks keymap check in telescope.lua file
-
--- nmap <leader>d  <cmd>Telescope lsp_definitions<cr>
--- nmap <leader>gr  <cmd>Telescope lsp_references<cr>
--- nmap <leader>gs  <cmd>Telescope git_status<cr>
-
--- nmap <leader>p :PrettierAsync<cr>
-
--- " CocSearch
--- " nmap <leader>d <Plug>(coc-definition)
--- " nmap <leader>rr <Plug>(coc-rename)
--- " nmap <leader>gr <Plug>(coc-references)
-
--- " nmap <silent> [g <Plug>(coc-diagnostic-prev)
--- " nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
--- " " Search file/string
--- " nnoremap <leader>f :GFiles<CR>
--- " nnoremap <leader>s :Rg -w<space>
--- " nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+-- todo keymaps check in todo.lua
 
 -- " " Other
 -- " nmap <leader>gc :Commits<CR> " check global commits
