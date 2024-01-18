@@ -35,11 +35,11 @@ map("n", "<leader>bd", "<cmd>bdelete<cr>")
 map("n", "[[", "<cmd> Telescope buffers <cr>", {noremap = true})
 
 -- telescope keys
-map("n", "<leader>f",  "<cmd> Telescope find_files <cr>", {noremap = true})
-map("n", "<leader>lg", "<cmd> Telescope live_grep <cr>", {noremap = true})
-map("n", "<leader>lG", "<cmd> execute 'Telescope live_grep default_text=' . expand('<cword>')<cr>", {noremap = true})
-map("n", "<leader>h",  "<cmd> Telescope help_tags <cr>", {noremap = true})
+map("n", "ff",  "<cmd> Telescope find_files <cr>", {noremap = true})
+map("n", "fw", "<cmd> Telescope live_grep <cr>", {noremap = true})
+map("n", "fW", "<cmd> execute 'Telescope live_grep default_text=' . expand('<cword>')<cr>", {noremap = true})
 map("n", "ml",         "<cmd> Telescope bookmarks list <cr>", {noremap = true})
+map("n", "<leader>h",  "<cmd> Telescope help_tags <cr>", {noremap = true})
 -- other lsp leymaps check in lsp/keymaps.lua
 
 -- hop 
@@ -47,13 +47,22 @@ map("n", "w", "<cmd> HopWordAC <cr>")
 map("n", "b", "<cmd> HopWordBC <cr>")
 
 -- zen mode(on/off)
-map("n", "<leader>z", ":ZenMode <cr>")
+map("n", "Z", ":ZenMode <cr>")
 
 -- oil
-map("n", "e", "<cmd> Oil --float <cr>", { desc = "Open parent directory" })
+map("n", "E", "<cmd> Oil --float <cr>", { desc = "Open parent directory" })
 
 --prettier
 map("n", "<leader>p", "<Plug>(prettier-format)")
+
+-- git
+map("n", "gdo", "<cmd> DiffviewOpen<cr>")
+map("n", "gfh", "<cmd> DiffviewFileHistory<cr>")
+map("n", "fh", "<cmd> DiffviewFileHistory %<cr>")
+map("n", "gm", "<cmd> GitMessenger<cr>")
+map("n", "gc", "<cmd> Neogit commit<cr>")
+map("n", "go", "<cmd> Neogit <cr>")
+
 
 -- surround default keymaps
 -- ys* - add 
@@ -63,8 +72,3 @@ map("n", "<leader>p", "<Plug>(prettier-format)")
 
 -- bookmarks keymap check in telescope.lua file
 -- todo keymaps check in todo.lua
-
--- " " Other
--- " nmap <leader>gc :Commits<CR> " check global commits
--- " nmap <leader>c :BCommits<CR> " check commits on local file
--- " nmap <leader>gb :Git blame<CR>
