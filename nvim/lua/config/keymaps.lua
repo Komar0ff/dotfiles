@@ -3,7 +3,7 @@ local map = vim.keymap.set
 -- General
 map("n", "<C-p>", "<Up>", {remap = true})
 map("n", "<C-n>", "<Down>", {remap = true})
-map("n", "q", ":q<cr>", {silent = true})
+map("n", "<leader>q", ":q<cr>", {silent = true})
 map("n", "j", "gj", {noremap = true})
 map("n", "k", "gk", {noremap = true})
 
@@ -35,11 +35,10 @@ map("n", "<leader>bd", "<cmd>bdelete<cr>")
 map("n", "[[", "<cmd> Telescope buffers <cr>", {noremap = true})
 
 -- telescope keys
-map("n", "ff",  "<cmd> Telescope find_files <cr>", {noremap = true})
-map("n", "fw", "<cmd> Telescope live_grep <cr>", {noremap = true})
-map("n", "fW", "<cmd> execute 'Telescope live_grep default_text=' . expand('<cword>')<cr>", {noremap = true})
+map("n", "<leader>f",  "<cmd> Telescope find_files <cr>", {noremap = true})
+map("n", "<leader>w", "<cmd> Telescope live_grep <cr>", {noremap = true})
+map("n", "<leader>W", "<cmd> execute 'Telescope live_grep default_text=' . expand('<cword>')<cr>", {noremap = true})
 map("n", "ml",         "<cmd> Telescope bookmarks list <cr>", {noremap = true})
-map("n", "<leader>h",  "<cmd> Telescope help_tags <cr>", {noremap = true})
 -- other lsp leymaps check in lsp/keymaps.lua
 
 -- hop 
@@ -57,10 +56,10 @@ map("n", "<leader>p", "<Plug>(prettier-format)")
 
 -- git
 map("n", "gdo", "<cmd> DiffviewOpen<cr>")
-map("n", "gfh", "<cmd> DiffviewFileHistory<cr>")
-map("n", "fh", "<cmd> DiffviewFileHistory %<cr>")
+map("n", "ghg", "<cmd> DiffviewFileHistory<cr>")
+map("n", "gh", "<cmd> DiffviewFileHistory %<cr>")
 map("n", "gm", "<cmd> GitMessenger<cr>")
-map("n", "gc", "<cmd> Neogit commit<cr>")
+map("n", "git", "<cmd> Neogit commit<cr>")
 map("n", "go", "<cmd> Neogit <cr>")
 
 
