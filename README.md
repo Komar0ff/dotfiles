@@ -10,3 +10,6 @@ https://gitlab.com/gitlab-org/cli
 for github use gh
 ```brew install gh```
 https://cli.github.com/
+
+for kitty highlight
+```brew install zsh-syntax-highlighting```
