@@ -3,7 +3,7 @@ local map = vim.keymap.set
 -- General
 map("n", "<C-p>", "<Up>", {remap = true})
 map("n", "<C-n>", "<Down>", {remap = true})
-map("n", "<leader>q", ":q<cr>", {silent = true})
+map("n", "q", ":q<cr>", {silent = true})
 map("n", "j", "gj", {noremap = true})
 map("n", "k", "gk", {noremap = true})
 
@@ -13,7 +13,7 @@ map("n", ",", "<cmd>noh<cr>")
 -- clipboard
 map("n", "<leader>y", '"+y', {remap = true})
 map("v", "<leader>y", '"+y', {remap = true})
-map("n", "<leader>P", '"+p', {remap = true})
+map("n", "<leader>p", '"+p', {remap = true})
 
 -- Tabs
 map("n", "tn", "<cmd>tabnew<cr>", {remap = true})
@@ -45,14 +45,8 @@ map("n", "ml",         "<cmd> Telescope bookmarks list <cr>", {noremap = true})
 map("n", "w", "<cmd> HopWordAC <cr>")
 map("n", "b", "<cmd> HopWordBC <cr>")
 
--- zen mode(on/off)
-map("n", "Z", ":ZenMode <cr>")
-
 -- oil
-map("n", "E", "<cmd> Oil --float <cr>", { desc = "Open parent directory" })
-
---prettier
-map("n", "<leader>p", "<Plug>(prettier-format)")
+map("n", "<leader>e", "<cmd> Oil --float <cr>", { desc = "Open parent directory" })
 
 -- git
 map("n", "gdo", "<cmd> DiffviewOpen<cr>")
