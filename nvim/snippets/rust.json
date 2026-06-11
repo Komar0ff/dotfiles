@@ -1,0 +1,106 @@
+{
+  "pub fn": {
+    "prefix": "pfn",
+    "body": ["pub fn ${1:name}(${2}) ${3:-> ${4:()} }{", "\t$0", "}"]
+  },
+  "async fn": {
+    "prefix": "afn",
+    "body": ["async fn ${1:name}(${2}) ${3:-> ${4:()} }{", "\t$0", "}"]
+  },
+  "Struct + derive": {
+    "prefix": "struct",
+    "body": [
+      "#[derive(Debug, Clone${1:, PartialEq})]",
+      "pub struct ${2:Name} {",
+      "\tpub ${3:field}: ${4:Type},",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": ["#[derive(Debug, Clone)]", "pub enum ${1:Name} {", "\t${2:Variant},", "\t$0", "}"]
+  },
+  "impl": {
+    "prefix": "impl",
+    "body": ["impl ${1:Type} {", "\t$0", "}"]
+  },
+  "impl Trait for Type": {
+    "prefix": "implt",
+    "body": ["impl ${1:Trait} for ${2:Type} {", "\t$0", "}"]
+  },
+  "Trait": {
+    "prefix": "trait",
+    "body": ["pub trait ${1:Name} {", "\t$0", "}"]
+  },
+  "match": {
+    "prefix": "match",
+    "body": ["match ${1:expr} {", "\t${2:pattern} => ${3:value},", "\t_ => ${4:default},", "}"]
+  },
+  "if let Some": {
+    "prefix": "iflet",
+    "body": ["if let Some(${1:val}) = ${2:opt} {", "\t$0", "}"]
+  },
+  "let else": {
+    "prefix": "letelse",
+    "body": ["let ${1:Ok(val)} = ${2:expr} else {", "\t${3:return;}", "};", "$0"]
+  },
+  "Error enum (thiserror)": {
+    "prefix": "errenum",
+    "body": [
+      "#[derive(Debug, thiserror::Error)]",
+      "pub enum ${1:Error} {",
+      "\t#[error(\"${2:message}\")]",
+      "\t${3:Variant},",
+      "\t$0",
+      "}"
+    ]
+  },
+  "fn -> Result": {
+    "prefix": "fnr",
+    "body": ["fn ${1:name}(${2}) -> Result<${3:()}, ${4:Error}> {", "\t$0", "\tOk(${5:()})", "}"]
+  },
+  "main -> Result": {
+    "prefix": "mainr",
+    "body": [
+      "fn main() -> Result<(), Box<dyn std::error::Error>> {",
+      "\t$0",
+      "\tOk(())",
+      "}"
+    ]
+  },
+  "tokio main": {
+    "prefix": "tokmain",
+    "body": ["#[tokio::main]", "async fn main() -> anyhow::Result<()> {", "\t$0", "\tOk(())", "}"]
+  },
+  "Arc<Mutex<>>": {
+    "prefix": "arcmtx",
+    "body": ["let ${1:shared} = std::sync::Arc::new(std::sync::Mutex::new(${2:value}));"]
+  },
+  "Test module": {
+    "prefix": "testmod",
+    "body": [
+      "#[cfg(test)]",
+      "mod tests {",
+      "\tuse super::*;",
+      "",
+      "\t#[test]",
+      "\tfn ${1:test_name}() {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "Test fn": {
+    "prefix": "test",
+    "body": ["#[test]", "fn ${1:test_name}() {", "\t$0", "}"]
+  },
+  "assert_eq": {
+    "prefix": "aseq",
+    "body": ["assert_eq!(${1:left}, ${2:right});"]
+  },
+  "dbg": {
+    "prefix": "dbg",
+    "body": ["dbg!(${1:expr});"]
+  }
+}

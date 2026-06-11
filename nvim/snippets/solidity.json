@@ -1,0 +1,147 @@
+{
+  "SPDX + pragma": {
+    "prefix": "spdx",
+    "body": [
+      "// SPDX-License-Identifier: ${1:MIT}",
+      "pragma solidity ^0.8.${2:24};",
+      "$0"
+    ]
+  },
+  "Constructor": {
+    "prefix": "ctor",
+    "body": ["constructor(${1}) {", "\t$0", "}"]
+  },
+  "External function": {
+    "prefix": "fn",
+    "body": ["function ${1:name}(${2}) external ${3:returns (${4:uint256})} {", "\t$0", "}"]
+  },
+  "View function": {
+    "prefix": "fnv",
+    "body": ["function ${1:name}(${2}) external view returns (${3:uint256}) {", "\t$0", "}"]
+  },
+  "Modifier": {
+    "prefix": "mod",
+    "body": ["modifier ${1:name}() {", "\t${2:_;}", "}"]
+  },
+  "Event + emit": {
+    "prefix": "ev",
+    "body": ["event ${1:Name}(${2:address indexed who}, ${3:uint256 amount});"]
+  },
+  "Custom error": {
+    "prefix": "err",
+    "body": ["error ${1:Name}(${2});"]
+  },
+  "Revert custom error (gas)": {
+    "prefix": "reqerr",
+    "body": ["if (${1:!cond}) revert ${2:Error}();"]
+  },
+  "Require": {
+    "prefix": "req",
+    "body": ["require(${1:cond}, \"${2:msg}\");"]
+  },
+  "Mapping": {
+    "prefix": "map",
+    "body": ["mapping(${1:address} => ${2:uint256}) ${3:public} ${4:name};"]
+  },
+  "Nested mapping": {
+    "prefix": "map2",
+    "body": ["mapping(${1:address} => mapping(${2:address} => ${3:uint256})) ${4:public} ${5:name};"]
+  },
+  "Struct": {
+    "prefix": "struct",
+    "body": ["struct ${1:Name} {", "\t${2:uint256 field};", "\t$0", "}"]
+  },
+  "Interface": {
+    "prefix": "iface",
+    "body": ["interface I${1:Name} {", "\t$0", "}"]
+  },
+  "NatSpec block": {
+    "prefix": "natspec",
+    "body": [
+      "/// @notice ${1:what it does}",
+      "/// @param ${2:name} ${3:desc}",
+      "/// @return ${4:desc}"
+    ]
+  },
+  "For loop (cached length)": {
+    "prefix": "forc",
+    "body": [
+      "uint256 ${1:len} = ${2:arr}.length;",
+      "for (uint256 ${3:i}; ${3:i} < ${1:len};) {",
+      "\t$0",
+      "\tunchecked { ++${3:i}; }",
+      "}"
+    ]
+  },
+  "Unchecked block": {
+    "prefix": "unchk",
+    "body": ["unchecked {", "\t$0", "}"]
+  },
+  "SafeERC20 import + using": {
+    "prefix": "safeerc",
+    "body": [
+      "import {IERC20} from \"@openzeppelin/contracts/token/ERC20/IERC20.sol\";",
+      "import {SafeERC20} from \"@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol\";",
+      "",
+      "using SafeERC20 for IERC20;$0"
+    ]
+  },
+  "ReentrancyGuard fn": {
+    "prefix": "reent",
+    "body": ["function ${1:name}(${2}) external nonReentrant {", "\t$0", "}"]
+  },
+  "Foundry PoC test": {
+    "prefix": "poc",
+    "body": [
+      "// SPDX-License-Identifier: MIT",
+      "pragma solidity ^0.8.${1:24};",
+      "",
+      "import {Test, console} from \"forge-std/Test.sol\";",
+      "import {${2:Target}} from \"${3:../src/Target.sol}\";",
+      "",
+      "contract ${2:Target}PoC is Test {",
+      "\t${2:Target} internal target;",
+      "\taddress internal attacker = makeAddr(\"attacker\");",
+      "",
+      "\tfunction setUp() public {",
+      "\t\ttarget = new ${2:Target}();",
+      "\t}",
+      "",
+      "\tfunction test_${4:Exploit}() public {",
+      "\t\tvm.startPrank(attacker);",
+      "\t\t$0",
+      "\t\tvm.stopPrank();",
+      "\t}",
+      "}"
+    ]
+  },
+  "Test function": {
+    "prefix": "tfn",
+    "body": ["function test_${1:Name}() public {", "\t$0", "}"]
+  },
+  "Fuzz test": {
+    "prefix": "fuzz",
+    "body": [
+      "function testFuzz_${1:Name}(${2:uint256 x}) public {",
+      "\t${2:x} = bound(${3:x}, ${4:1}, ${5:type(uint256).max});",
+      "\t$0",
+      "}"
+    ]
+  },
+  "expectRevert": {
+    "prefix": "texrev",
+    "body": ["vm.expectRevert(${1:abi.encodeWithSelector(${2:IErr}.${3:Err}.selector)});"]
+  },
+  "prank block": {
+    "prefix": "tprank",
+    "body": ["vm.startPrank(${1:user});", "$0", "vm.stopPrank();"]
+  },
+  "deal tokens": {
+    "prefix": "tdeal",
+    "body": ["deal(${1:token}, ${2:to}, ${3:amount});"]
+  },
+  "console.log": {
+    "prefix": "clog",
+    "body": ["console.log(\"${1:label}:\", ${2:value});"]
+  }
+}

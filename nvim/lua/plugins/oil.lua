@@ -1,1 +1,1 @@
-return { 'stevearc/oil.nvim', opts = {}, lazy = false }
+return { 'stevearc/oil.nvim', event = "VeryLazy", opts = {}}

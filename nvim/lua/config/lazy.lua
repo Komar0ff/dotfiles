@@ -37,9 +37,9 @@ opt.smartcase = true
 opt.compatible = false
 opt.nu = true
 opt.swapfile = false
-opt.guifont = "JetBrainsMono-Regular"
+opt.guifont = "JetBrainsMono Nerd Font Mono"
 opt.completeopt = "menu,menuone,noselect"
-opt.syntax = "off"
+opt.syntax = "on"
 
 require("lazy").setup({
   spec = { import = "plugins" },
@@ -60,6 +60,8 @@ require("lazy").setup({
         "netrwFileHandlers",
         "matchit",
         "tar",
+        "syntax",
+        "synmenu",
         "tarPlugin",
         "rrhelper",
         "spellfile_plugin",
@@ -69,8 +71,6 @@ require("lazy").setup({
         "zipPlugin",
         "tutor",
         "rplugin",
-        "syntax",
-        "synmenu",
         "optwin",
         "compiler",
         "bugreport",

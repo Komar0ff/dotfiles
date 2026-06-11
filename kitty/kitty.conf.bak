@@ -63,7 +63,7 @@ map cmd+ъ       next_window
 map cmd+х       previous_window
 
 # BEGIN_KITTY_THEME
-# Rosé Pine Moon
+# 1984 Dark
 include current-theme.conf
 # END_KITTY_THEME
 

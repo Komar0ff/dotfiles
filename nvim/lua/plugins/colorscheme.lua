@@ -1,38 +1,11 @@
 return {
-  "catppuccin/nvim",
+  "rose-pine/neovim",
+  name = "rose-pine",
   lazy = false,
-  event = 'VimEnter',
-  name = "catppuccin",
   priority = 1000,
-  config = function() vim.cmd([[colorscheme catppuccin]]) end,
-  opts = {
-    integrations = {
-      alpha = true,
-      cmp = true,
-      flash = true,
-      gitsigns = true,
-      illuminate = true,
-      indent_blankline = { enabled = true },
-      lsp_trouble = true,
-      mason = true,
-      native_lsp = {
-        enabled = true,
-        underlines = {
-          errors = { "undercurl" },
-          hints = { "undercurl" },
-          warnings = { "undercurl" },
-          information = { "undercurl" },
-        },
-      },
-      navic = { enabled = true, custom_bg = "lualine" },
-      neotest = true,
-      noice = true,
-      notify = true,
-      neotree = true,
-      semantic_tokens = true,
-      telescope = true,
-      treesitter = true,
-      which_key = true,
-    },
-  },
+  opts = { variant = "moon" },  -- main | moon | dawn
+  config = function(_, opts)
+    require("rose-pine").setup(opts)
+    vim.cmd.colorscheme("rose-pine")
+  end,
 }

@@ -1,0 +1,8 @@
+{
+  "contributes": {
+    "snippets": [
+      { "language": "solidity", "path": "./solidity.json" },
+      { "language": "rust",     "path": "./rust.json" }
+    ]
+  }
+}

@@ -41,21 +41,8 @@ map("n", "<leader>W", "<cmd> execute 'Telescope live_grep default_text=' . expan
 map("n", "ml",         "<cmd> Telescope bookmarks list <cr>", {noremap = true})
 -- other lsp leymaps check in lsp/keymaps.lua
 
--- hop 
-map("n", "w", "<cmd> HopWordAC <cr>")
-map("n", "b", "<cmd> HopWordBC <cr>")
-
 -- oil
-map("n", "<leader>e", "<cmd> Oil --float <cr>", { desc = "Open parent directory" })
-
--- git
-map("n", "gdo", "<cmd> DiffviewOpen<cr>")
-map("n", "ghg", "<cmd> DiffviewFileHistory<cr>")
-map("n", "gh", "<cmd> DiffviewFileHistory %<cr>")
-map("n", "gm", "<cmd> GitMessenger<cr>")
-map("n", "git", "<cmd> Neogit commit<cr>")
-map("n", "go", "<cmd> Neogit <cr>")
-
+map("n", "e", "<cmd> Oil --float <cr>", { desc = "Open parent directory" })
 
 -- surround default keymaps
 -- ys* - add 
