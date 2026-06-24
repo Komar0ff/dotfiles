@@ -30,7 +30,7 @@ return {
         i = {
           ["<C-j>"] = "move_selection_next",
           ["<C-k>"] = "move_selection_previous",
-          ["<Esc>"] = "close",         -- сразу закрыть, а не уходить в normal
+          ["<Esc>"] = "close",         
         },
       },
       file_ignore_patterns = {
